@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(to bottom right, hsla(24, 4%, 76%, 0.952), #bae691); */
+    /* background-image: url('/images/background.gif'); */
+    /* background-size: cover; */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header and Navigation */
+header {
+    background-color: white;
+    color: #333;
+    padding: 10px 0;
+    text-align: right;
+}
+
+nav {
+    background-color: black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #777;
+}
+/* Form and Search Results */
+.form-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Search Results */
+.search-results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Error Message */
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Clock Styles */
+.clock {
+    position: relative;
+    margin: 20px 20px 20px 0; 
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    float: left; 
+}
+
+/* ... Existing styles ... */
+
+.clock {
+    position: fixed;
+    top: 50px;
+    left: 30px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+.clock span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .clock {
+        font-size: 16px;
+    }
+    
+    .clock span {
+        font-size: 20px;
+    }
+}
+
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
