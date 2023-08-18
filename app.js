@@ -49,7 +49,13 @@ app.post('/country', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('country', { pageTitle: 'Country', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('country', { pageTitle: 'Country', apiData: null, error });
+        }
+        else {
+            res.render('country', { pageTitle: 'Country', apiData, error: null });
+        }
+        // res.render('country', { pageTitle: 'Country', apiData, error: null });
     } catch (error) {
         res.render('country', { pageTitle: 'Country', apiData: null, error });
     }
@@ -67,7 +73,13 @@ app.post('/logo', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('logo', { pageTitle: 'Logo', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('logo', { pageTitle: 'Logo', apiData: null, error });
+        }
+        else{
+            res.render('logo', { pageTitle: 'Logo', apiData, error: null });
+        }
+        // res.render('logo', { pageTitle: 'Logo', apiData, error: null });
     } catch (error) {
         res.render('logo', { pageTitle: 'Logo', apiData: null, error });
     }
@@ -85,8 +97,13 @@ app.post('/dict', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        // console.log(apiData)
-        res.render('dict', { pageTitle: 'Dictionary', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('dict', { pageTitle: 'Dictionary', apiData: null, error });
+        }
+        else{
+            res.render('dict', { pageTitle: 'Dictionary', apiData, error: null });
+        }
+        // res.render('dict', { pageTitle: 'Dictionary', apiData, error: null });
     } catch (error) {
         res.render('dict', { pageTitle: 'Dictionary', apiData: null, error });
     }
@@ -122,7 +139,13 @@ app.post('/history', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('history', { pageTitle: 'Historical Events', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('history', { pageTitle: 'Historical Events', apiData: null, error });
+        }
+        else{
+            res.render('history', { pageTitle: 'Historical Events', apiData, error: null });
+        }
+        // res.render('history', { pageTitle: 'Historical Events', apiData, error: null });
     } catch (error) {
         res.render('history', { pageTitle: 'Historical Events', apiData: null, error });
     }
@@ -158,7 +181,13 @@ app.post('/recipe', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('recipe', { pageTitle: 'Recipe', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('recipe', { pageTitle: 'Recipe', apiData: null, error });
+        }
+        else{
+            res.render('recipe', { pageTitle: 'Recipe', apiData, error: null });
+        }
+        // res.render('recipe', { pageTitle: 'Recipe', apiData, error: null });
     } catch (error) {
         res.render('recipe', { pageTitle: 'Recipe', apiData: null, error });
     }
@@ -211,29 +240,35 @@ app.post('/theasurus', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('thesaurus', { pageTitle: 'Thesaurus', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('thesaurus', { pageTitle: 'Thesaurus', apiData: null, error });
+        }
+        else{
+            res.render('thesaurus', { pageTitle: 'Thesaurus', apiData, error: null });
+        }
+        // res.render('thesaurus', { pageTitle: 'Thesaurus', apiData, error: null });
     } catch (error) {
         res.render('thesaurus', { pageTitle: 'Thesaurus', apiData: null, error });
     }
 });
 
 
-app.get('/thesaurus', async (req, res) => {
-    res.render('thesaurus', { pageTitle: 'Thesaurus', apiData:null, error:null });
-});
+// app.get('/thesaurus', async (req, res) => {
+//     res.render('thesaurus', { pageTitle: 'Thesaurus', apiData:null, error:null });
+// });
 
-app.post('/thesaurus', async (req, res) => {
-    const word = req.body.word;
-    const path = "/v1/thesaurus";
-    const api = `${api_endpoint}${path}?word=${word}`;
-    try {
-        const response = await axios.get(api, config);
-        const apiData = response.data;
-        res.render('thesaurus', { pageTitle: 'Thesaurus', apiData, error: null });
-    } catch (error) {
-        res.render('thesaurus', { pageTitle: 'Thesaurus', apiData: null, error });
-    }
-});
+// app.post('/thesaurus', async (req, res) => {
+//     const word = req.body.word;
+//     const path = "/v1/thesaurus";
+//     const api = `${api_endpoint}${path}?word=${word}`;
+//     try {
+//         const response = await axios.get(api, config);
+//         const apiData = response.data;
+//         res.render('thesaurus', { pageTitle: 'Thesaurus', apiData, error: null });
+//     } catch (error) {
+//         res.render('thesaurus', { pageTitle: 'Thesaurus', apiData: null, error });
+//     }
+// });
 
 
 app.get('/weather', async (req, res) => {
@@ -247,7 +282,13 @@ app.post('/weather', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('weather', { pageTitle: 'Weather', apiData, error: null,city });
+        if (apiData.length === 0){
+            res.render('weather', { pageTitle: 'Weather', apiData: null, error });
+        }
+        else{
+            res.render('weather', { pageTitle: 'Weather', apiData, error: null,city });
+        }
+        // res.render('weather', { pageTitle: 'Weather', apiData, error: null,city });
     } catch (error) {
         res.render('weather', { pageTitle: 'Weather', apiData: null, error });
     }
@@ -265,7 +306,13 @@ app.post('/exercises', async (req, res) => {
     try {
         const response = await axios.get(api, config);
         const apiData = response.data;
-        res.render('exercises', { pageTitle: 'Exercises', apiData, error: null });
+        if (apiData.length === 0){
+            res.render('exercises', { pageTitle: 'Exercises', apiData: null, error });
+        }
+        else{
+            res.render('exercises', { pageTitle: 'Exercises', apiData, error: null });
+        }
+        // res.render('exercises', { pageTitle: 'Exercises', apiData, error: null });
     } catch (error) {
         res.render('exercises', { pageTitle: 'Exercises', apiData: null, error });
     }
